@@ -27,7 +27,8 @@
         transition: 0.2s;
 
         &:hover {
-          filter: brightness(135%);
+          -webkit-filter: brightness(135%);
+                  filter: brightness(135%);
         }
       }
     }
@@ -55,7 +56,10 @@
     display: flex;
     align-items: center;
     position: relative;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 
     span {
       background: $color1;
