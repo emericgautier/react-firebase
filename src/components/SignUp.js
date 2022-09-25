@@ -20,11 +20,12 @@ const SignUp = () => {
             displayName,
           });
           console.log(userAuth);
+          window.location.reload();
         });
     } catch (error) {
       console.log(error.message);
     }
-    console.log(registerEmail.current.value, registerPassword.current.value);
+    // console.log(registerEmail.current.value, registerPassword.current.value);
   };
 
   return (
