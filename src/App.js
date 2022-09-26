@@ -28,7 +28,11 @@ const App = () => {
           </div>
         )}
 
-        {user ? <CreatePost /> : <ConnectModal />}
+        {user ? (
+          <CreatePost uid={user.uid} displayName={user.displayName} />
+        ) : (
+          <ConnectModal />
+        )}
       </div>
       <div className="posts-container"></div>
     </div>
