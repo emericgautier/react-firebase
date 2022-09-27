@@ -3,22 +3,22 @@ import ConnectModal from "./components/ConnectModal";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth, db } from "./utils/firebase.config";
 import CreatePost from "./components/CreatePost";
-import { collection, doc, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import Post from "./components/Post";
 
 const App = () => {
   const [user, setUser] = useState(null);
   const [posts, setPosts] = useState([]);
 
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+  });
+
   useEffect(() => {
     getDocs(collection(db, "posts")).then((res) =>
       setPosts(res.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     );
-  });
-
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
+  }, []);
 
   const handleLogout = async () => {
     await signOut(auth);

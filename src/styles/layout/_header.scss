@@ -8,7 +8,7 @@
   position: relative;
   padding: 20px 20px;
   border-radius: 0 20px 20px 20px;
-  min-height: 250px;
+  min-height: 258px;
   box-shadow: $shadow;
 
   .connect-modal {
@@ -17,7 +17,7 @@
     .header-btn {
       position: absolute;
       left: 0;
-      top: -24px;
+      top: -29px;
 
       button {
         color: $white;
@@ -27,14 +27,13 @@
         transition: 0.2s;
 
         &:hover {
-          -webkit-filter: brightness(135%);
-                  filter: brightness(135%);
+          filter: brightness(135%);
         }
       }
     }
     .signup-container,
     .login-container {
-      min-height: 200px;
+      min-height: 210px;
       @include verticalCenter;
 
       h3 {
@@ -56,10 +55,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    user-select: none;
 
     span {
       background: $color1;

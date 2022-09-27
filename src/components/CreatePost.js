@@ -15,7 +15,6 @@ const CreatePost = ({ uid, displayName }) => {
       comments: null,
       date: Date.now(),
     };
-    // console.log(data);
     await addDoc(collection(db, "posts"), data);
     message.current.value = "";
   };
